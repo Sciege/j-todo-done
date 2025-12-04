@@ -1,10 +1,8 @@
 export default function Counter({ todoDone }) {
-  if (!todoDone || todoDone.length === 0) {
-    return <div>No todos found</div>;
-  }
-
-  const completedCounter = todoDone.filter((i) => i.completed).length;
-  const totalCounter = todoDone.length;
+  const todos = todoDone || [];
+  
+  const completedCounter = todos.filter((i) => i.completed).length;
+  const totalCounter = todos.length;
 
   return (
     <div className="app-container-counter" style={{ color: "black" }}>
